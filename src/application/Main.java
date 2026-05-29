@@ -13,5 +13,12 @@ public class Main {
         ChessMatch chessMatch = new ChessMatch();
         UI.printBoard(chessMatch.getPieces());
 
+        int c = Integer.parseInt(scanner.nextLine());
+        int d = Integer.parseInt(scanner.nextLine());
+
+        Position p = new Position(c, d);
+
+        ChessPosition cp = ChessPosition.fromPosition(p);
+        System.out.println(cp);
     }
 }
