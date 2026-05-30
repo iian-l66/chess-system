@@ -11,14 +11,14 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         ChessMatch chessMatch = new ChessMatch();
-        UI.printBoard(chessMatch.getPieces());
+        while (true) {
+            UI.printBoard(chessMatch.getPieces());
+            ChessPosition source = UI.readChessPosition(scanner);
+            ChessPosition target = UI.readChessPosition(scanner);
 
-        int c = Integer.parseInt(scanner.nextLine());
-        int d = Integer.parseInt(scanner.nextLine());
+            chessMatch.performChessMove(source, target);
+        }
 
-        Position p = new Position(c, d);
 
-        ChessPosition cp = ChessPosition.fromPosition(p);
-        System.out.println(cp);
     }
 }
